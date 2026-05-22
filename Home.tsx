@@ -72,7 +72,7 @@ export default function Home() {
             {[
               'Multi-Campus Districts',
               'State College Systems',
-              'Vocational Polytechnics',
+              'International Education',
               'Global Technical Partners'
             ].map((name) => (
               <span key={name} className="text-base md:text-lg font-serif font-semibold text-brand-primary tracking-wide leading-tight text-center">
