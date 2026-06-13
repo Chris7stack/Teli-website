@@ -14,7 +14,7 @@ export default function About() {
   const boardMembers = [
     { name: "Dr. George Boggs", role: "Board of Directors", img: "https://picsum.photos/seed/george/400/400" },
     { name: "J. Noah Brown", role: "Board of Directors", img: "https://picsum.photos/seed/noah/400/400" },
-    { name: "Dr. Augustine Gallego", role: "Board of Directors", img: "https://picsum.photos/seed/augustine/400/400" },
+    { name: "Augustine (Augie) Gallego", role: "Board of Directors", img: "https://picsum.photos/seed/augustine/400/400" },
     { name: "Dr. Jing Luan", role: "Board of Directors", img: "https://picsum.photos/seed/jing/400/400" },
     { name: "Dr. Rosalind Raby", role: "Board of Directors", img: "https://picsum.photos/seed/rosalind/400/400" },
   ];
