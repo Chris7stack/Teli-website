@@ -37,17 +37,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-bold text-sm mb-1">Our Office</p>
-                    <p className="text-slate-500 text-sm">9544 Cresta Drive<br />Los Angeles, CA 90035</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-brand-primary/5 p-3 rounded-lg text-brand-primary">
-                    <Phone size={20} />
-                  </div>
-                  <div>
-                    <p className="font-bold text-sm mb-1">Phone</p>
-                    <p className="text-slate-500 text-sm">(310) 951-3565</p>
+                    <p className="text-slate-500 text-sm"><br />Hayward, CA 94542</p>
                   </div>
                 </div>
 
