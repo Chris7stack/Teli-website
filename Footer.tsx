@@ -40,11 +40,7 @@ export default function Footer() {
           <ul className="space-y-4 text-sm">
             <li className="flex items-start gap-3">
               <MapPin size={18} className="text-brand-accent shrink-0" />
-              <span>9544 Cresta Drive<br />Los Angeles, CA 90035</span>
-            </li>
-            <li className="flex items-center gap-3">
-              <Phone size={18} className="text-brand-accent shrink-0" />
-              <span>(310) 951-3565</span>
+              <span><br />Hayward, CA 94542</span>
             </li>
             <li className="flex items-center gap-3">
               <Mail size={18} className="text-brand-accent shrink-0" />
