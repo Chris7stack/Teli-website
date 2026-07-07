@@ -37,14 +37,14 @@ export default function Apply() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     
-    // BACKEND DISPATCH: All applications submitted via this form are emailed to apply@teli-global.org
+    // BACKEND DISPATCH: All applications submitted via this form are emailed to karla.bailey@teli-global.org
     const payload = {
       ...formData,
       appRefId,
       timestamp: new Date().toISOString(),
-      recipient: 'apply@teli-global.org' // Directed to apply@teli-global.org in backend
+      recipient: 'karla.bailey@teli-global.org' // Directed to karla.baileyy@teli-global.org in backend
     };
-    console.info("SMTP Dispatch Success: Application successfully routed to apply@teli-global.org", payload);
+    console.info("SMTP Dispatch Success: Application successfully routed to karla.bailey@teli-global.org", payload);
     
     setSubmitted(true);
   };
