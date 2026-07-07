@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { MapPin, Mail } from 'lucide-react';
 import { TeliLogo } from './TeliLogo';
 
 export default function Footer() {
@@ -8,11 +8,10 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
         <div className="col-span-1 md:col-span-1">
           <Link to="/" className="flex items-center mb-6 group transition-transform duration-300 hover:scale-102">
-            <TeliLogo className="h-10 md:h-12" theme="footer" />
+            <TeliLogo className="h-14 md:h-16" theme="footer" />
           </Link>
           <p className="text-sm leading-relaxed">
-            Empowering community college leaders to transform institutions through innovative training, 
-            mentorship, and sustainable development strategies.
+            Empowering community college leaders to become more creative and transformative change agents in their colleges and communities.
           </p>
         </div>
 
@@ -21,17 +20,16 @@ export default function Footer() {
           <ul className="space-y-4 text-sm">
             <li><Link to="/" className="hover:text-brand-accent transition-colors">Home</Link></li>
             <li><Link to="/about" className="hover:text-brand-accent transition-colors">About Us</Link></li>
-            <li><Link to="/services" className="hover:text-brand-accent transition-colors">Programs & Services</Link></li>
+            <li><Link to="/programs" className="hover:text-brand-accent transition-colors">Executive Education</Link></li>
             <li><Link to="/contact" className="hover:text-brand-accent transition-colors">Contact Us</Link></li>
           </ul>
         </div>
 
         <div>
-          <h4 className="text-white font-bold mb-6">Programs</h4>
+          <h4 className="text-white font-bold mb-6">Executive Education</h4>
           <ul className="space-y-4 text-sm">
-            <li><Link to="/services" className="hover:text-brand-accent transition-colors">Fellowship Program</Link></li>
-            <li><Link to="/services" className="hover:text-brand-accent transition-colors">Community College Leadership Development</Link></li>
-            <li><Link to="/services" className="hover:text-brand-accent transition-colors">Professional Development</Link></li>
+            <li><Link to="/programs" className="hover:text-brand-accent transition-colors">TELI Leadership Fellows</Link></li>
+            <li><Link to="/programs" className="hover:text-brand-accent transition-colors">Executive Coaching</Link></li>
           </ul>
         </div>
 
@@ -40,7 +38,7 @@ export default function Footer() {
           <ul className="space-y-4 text-sm">
             <li className="flex items-start gap-3">
               <MapPin size={18} className="text-brand-accent shrink-0" />
-              <span><br />Hayward, CA 94542</span>
+              <span>Hayward, CA 94542</span>
             </li>
             <li className="flex items-center gap-3">
               <Mail size={18} className="text-brand-accent shrink-0" />

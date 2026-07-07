@@ -26,7 +26,7 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
-    { name: 'Services', path: '/services' },
+    { name: 'Executive Education', path: '/programs' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -39,7 +39,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center group transition-transform duration-300 hover:scale-102">
-          <TeliLogo className="h-10 md:h-12" theme="light" />
+          <TeliLogo className="h-[75px] md:h-[110px]" theme="light" />
         </Link>
 
         {/* Desktop Nav */}
@@ -56,8 +56,11 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          <Link to="/contact" className="btn-primary py-2 px-5 text-sm">
-            Get Started
+          <Link 
+            to="/apply" 
+            className="px-5 py-2.5 bg-brand-primary hover:bg-brand-primary/90 text-white rounded-xl font-bold text-sm transition-all shadow-sm hover:shadow-md uppercase tracking-wider"
+          >
+            Apply
           </Link>
         </div>
 
@@ -88,11 +91,11 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            to="/contact"
-            className="btn-primary text-center"
+            to="/apply"
+            className="w-full text-center px-5 py-3 bg-brand-primary text-white rounded-xl font-bold hover:bg-brand-primary/90 transition-colors shadow-sm uppercase tracking-wider mt-2"
             onClick={() => setIsOpen(false)}
           >
-            Get Started
+            Apply
           </Link>
         </motion.div>
       )}
