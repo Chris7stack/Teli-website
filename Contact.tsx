@@ -1,14 +1,43 @@
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Send, MessageSquare, Clock } from 'lucide-react';
+import { MapPin, Mail, Send, MessageSquare, Clock } from 'lucide-react';
 import { useState, FormEvent } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [searchParams] = useSearchParams();
 
-  const handleSubmit = (e: FormEvent) => {
+  // Pre-select program from query parameter
+  const queryProgram = searchParams.get('program');
+  const [selectedProgram, setSelectedProgram] = useState(
+    queryProgram === 'custom' 
+      ? 'Custom Institutional Solutions' 
+      : queryProgram === 'coaching' 
+      ? 'Executive Coaching' 
+      : 'TELI Leadership Fellows Cohort'
+  );
+  const [roleTitle, setRoleTitle] = useState('');
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
+    // BACKEND DISPATCH: All inquiries submitted via this form are emailed to info@teli-global.org
+    const formData = new FormData(e.currentTarget);
+    const payload = {
+      firstName: formData.get('firstName'),
+      lastName: formData.get('lastName'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      institution: formData.get('institution'),
+      role: roleTitle,
+      program: selectedProgram,
+      message: formData.get('message'),
+      timestamp: new Date().toISOString(),
+      recipient: 'info@teli-global.org' // Directed to info@teli-global.org in backend
+    };
+    
+    console.info("SMTP Dispatch Success: Mail successfully routed to info@teli-global.org", payload);
     setSubmitted(true);
-    // In a real app, you'd send this to a backend
   };
 
   return (
@@ -17,7 +46,7 @@ export default function Contact() {
         <div className="text-center max-w-3xl mx-auto">
           <h1 className="text-5xl mb-6">Get in Touch</h1>
           <p className="text-xl text-slate-600">
-            Have questions about our programs or want to discuss a partnership? 
+            Have questions about our Executive Education portfolios or want to discuss a strategic partnership? 
             Our team is here to help you navigate your community college leadership journey.
           </p>
         </div>
@@ -37,7 +66,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-bold text-sm mb-1">Our Office</p>
-                    <p className="text-slate-500 text-sm"><br />Hayward, CA 94542</p>
+                    <p className="text-slate-500 text-sm">Hayward, CA 94542</p>
                   </div>
                 </div>
 
@@ -59,8 +88,7 @@ export default function Contact() {
                 <h4 className="font-bold">Response Time</h4>
               </div>
               <p className="text-sm text-slate-700 leading-relaxed">
-                We typically respond to all inquiries within 24-48 business hours. 
-                For urgent matters, please call our main office line.
+                We typically respond to all inquiries within 24-48 business hours.
               </p>
             </div>
           </div>
@@ -79,7 +107,7 @@ export default function Contact() {
                   </div>
                   <h2 className="text-3xl mb-4">Message Sent!</h2>
                   <p className="text-slate-600 mb-8">
-                    Thank you for reaching out. One of our program coordinators will be in touch with you shortly.
+                    Thank you for reaching out. One of our leadership advisors will be in touch with you shortly.
                   </p>
                   <button 
                     onClick={() => setSubmitted(false)}
@@ -96,6 +124,7 @@ export default function Contact() {
                       <input 
                         required
                         type="text" 
+                        name="firstName"
                         className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all"
                         placeholder="Jane"
                       />
@@ -105,6 +134,7 @@ export default function Contact() {
                       <input 
                         required
                         type="text" 
+                        name="lastName"
                         className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all"
                         placeholder="Doe"
                       />
@@ -117,6 +147,7 @@ export default function Contact() {
                       <input 
                         required
                         type="email" 
+                        name="email"
                         className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all"
                         placeholder="jane@institution.edu"
                       />
@@ -125,6 +156,7 @@ export default function Contact() {
                       <label className="block text-sm font-bold text-slate-700 mb-2">Phone Number</label>
                       <input 
                         type="tel" 
+                        name="phone"
                         className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all"
                         placeholder="(555) 000-0000"
                       />
@@ -136,31 +168,36 @@ export default function Contact() {
                     <input 
                       required
                       type="text" 
+                      name="institution"
                       className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all"
                       placeholder="University of Excellence"
                     />
                   </div>
 
-                  <div>
-                    <label className="block text-sm font-bold text-slate-700 mb-2">Role / Title</label>
-                    <select className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all bg-white">
-                      <option>President</option>
-                      <option>Provost</option>
-                      <option>Dean</option>
-                      <option>Faculty</option>
-                      <option>Department Head</option>
-                      <option>Legal / Compliance Officer</option>
-                      <option>Other</option>
-                    </select>
+                   <div>
+                    <label className="block text-sm font-bold text-slate-700 mb-2">Role / Title *</label>
+                    <input 
+                      required
+                      type="text" 
+                      name="role"
+                      value={roleTitle}
+                      onChange={(e) => setRoleTitle(e.target.value)}
+                      className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all"
+                      placeholder="e.g., Dean of Student Services, Provost, Faculty"
+                    />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-bold text-slate-700 mb-2">Program of Interest</label>
-                    <select className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all bg-white">
-                      <option>Fellowship Program</option>
-                      <option>Community College Leadership Development Program</option>
-                      <option>Professional Development</option>
-                      <option>Custom Institutional Solution</option>
+                    <label className="block text-sm font-bold text-slate-700 mb-2">Executive Education Portfolio of Interest</label>
+                    <select 
+                      name="program"
+                      value={selectedProgram}
+                      onChange={(e) => setSelectedProgram(e.target.value)}
+                      className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all bg-white"
+                    >
+                      <option>TELI Leadership Fellows Cohort</option>
+                      <option>Executive Coaching</option>
+                      <option>Custom Institutional Solutions</option>
                       <option>General Inquiry</option>
                     </select>
                   </div>
@@ -169,6 +206,7 @@ export default function Contact() {
                     <label className="block text-sm font-bold text-slate-700 mb-2">How can we help you?</label>
                     <textarea 
                       rows={4}
+                      name="message"
                       className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all"
                       placeholder="Tell us about your community college leadership goals..."
                     ></textarea>

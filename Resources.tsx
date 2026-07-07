@@ -89,7 +89,7 @@ export default function Resources() {
           <h2 className="text-3xl mb-4 relative z-10">Stay Informed</h2>
           <p className="text-slate-400 mb-8 max-w-xl mx-auto relative z-10">
             Subscribe to our monthly newsletter for the latest insights in community college leadership 
-            and updates on upcoming TELI programs.
+            and updates on upcoming TELI Executive Education offerings.
           </p>
           <form className="max-w-md mx-auto flex gap-2 relative z-10">
             <input 
