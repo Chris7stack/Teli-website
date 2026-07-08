@@ -20,13 +20,13 @@ export default function Footer() {
           <ul className="space-y-4 text-sm">
             <li><Link to="/" className="hover:text-brand-accent transition-colors">Home</Link></li>
             <li><Link to="/about" className="hover:text-brand-accent transition-colors">About Us</Link></li>
-            <li><Link to="/programs" className="hover:text-brand-accent transition-colors">Executive Education</Link></li>
+            <li><Link to="/programs" className="hover:text-brand-accent transition-colors">Leadership Programs</Link></li>
             <li><Link to="/contact" className="hover:text-brand-accent transition-colors">Contact Us</Link></li>
           </ul>
         </div>
 
         <div>
-          <h4 className="text-white font-bold mb-6">Executive Education</h4>
+          <h4 className="text-white font-bold mb-6">Leadership Programs</h4>
           <ul className="space-y-4 text-sm">
             <li><Link to="/programs" className="hover:text-brand-accent transition-colors">TELI Leadership Fellows</Link></li>
             <li><Link to="/programs" className="hover:text-brand-accent transition-colors">Executive Coaching</Link></li>
