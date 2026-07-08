@@ -79,7 +79,7 @@ export default function Contact() {
           </span>
           <h1 className="text-4xl md:text-5xl font-serif font-bold tracking-tight text-slate-900 mb-6">Get in Touch</h1>
           <p className="text-lg text-slate-600 leading-relaxed">
-            Have questions about our Executive Education portfolios or want to discuss a strategic partnership? 
+            Have questions about our Leadership Programs or want to discuss a strategic partnership? 
             Our team is here to help you navigate your community college leadership journey.
           </p>
         </div>
@@ -102,7 +102,8 @@ export default function Contact() {
                     <h4 className="font-bold text-sm text-slate-800 mb-1">Our Location</h4>
                     <p className="text-slate-500 text-xs leading-relaxed">
                       TELI Global Headquarters<br />
-                      9544 Cresta Drive Los Angeles, CA 90035
+                      9544 Cresta Drive<br />
+                      Los Angeles, CA 90035
                     </p>
                   </div>
                 </div>
@@ -135,6 +136,10 @@ export default function Contact() {
                 </div>
               </div>
             </div>
+
+
+          </div>
+
           {/* Form Column (2/3 Width) */}
           <div className="lg:col-span-2">
             <AnimatePresence mode="wait">
