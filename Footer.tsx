@@ -51,6 +51,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto pt-8 border-t border-slate-800 flex flex-col md:row justify-between items-center gap-4 text-xs">
         <p>© {new Date().getFullYear()} Transformative Education Leadership Institute. All rights reserved.</p>
         <div className="flex gap-6">
+          <Link to="/admin-portal" className="hover:text-white">Admin Portal</Link>
           <a href="#" className="hover:text-white">Privacy Policy</a>
           <a href="#" className="hover:text-white">Terms of Service</a>
           <a href="#" className="hover:text-white">Accessibility</a>
