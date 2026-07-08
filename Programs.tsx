@@ -8,9 +8,9 @@ export default function Programs() {
       {/* Header */}
       <section className="max-w-7xl mx-auto px-6 mb-20">
         <div className="max-w-3xl">
-          <h1 className="text-5xl mb-6 font-sans tracking-tight text-slate-900">Executive Education & Strategic Leadership</h1>
+          <h1 className="text-5xl mb-6 font-sans tracking-tight text-slate-900">Leadership Programs</h1>
           <p className="text-xl text-slate-600 leading-relaxed">
-            Our Executive Education portfolios are designed to meet community college leaders where they are in their career journey, 
+            Our Leadership Programs portfolios are designed to meet community college leaders where they are in their career journey, 
             delivering deep institutional impact, lifelong networks, and ethical, visionary leadership models.
           </p>
         </div>
@@ -57,7 +57,7 @@ export default function Programs() {
             {/* Descriptive paragraphs */}
             <div className="space-y-6 text-slate-600 leading-relaxed mb-8 text-[15px]">
               <p>
-                The mainstay of the Transformative Education Leadership Institute’s Executive Education portfolio is the distinguished <strong>TELI Leadership Fellows</strong> initiative, a one-year, primarily online journey designed to assist mid- to senior-level faculty and administrators, both in the U.S. and abroad, cultivate the Strategic Leadership, practical experiences, and Global Leadership networks necessary to ethically and effectively guide their institutions through changing educational and policy landscapes.
+                The mainstay of the Transformative Education Leadership Institute’s Leadership Programs portfolio is the distinguished <strong>TELI Leadership Fellows</strong> initiative, a one-year, primarily online journey designed to assist mid- to senior-level faculty and administrators, both in the U.S. and abroad, cultivate the Strategic Leadership, practical experiences, and Global Leadership networks necessary to ethically and effectively guide their institutions through changing educational and policy landscapes.
               </p>
               <p>
                 The Inaugural TELI Leadership Fellows cohort will commence in February 2027 with an in-person orientation at the Bellwether Futures Assembly and will conclude in February 2028 at the ACCT National Legislative Summit. Apart from these orientation and culminating activities, TELI’s 12-module Strategic Leadership curriculum will be delivered online, one Saturday per month (excluding December).

@@ -33,7 +33,7 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link to="/programs" className="btn-primary flex items-center gap-2">
-                  Explore Executive Education <ArrowRight size={18} />
+                  Explore Leadership Programs <ArrowRight size={18} />
                 </Link>
                 <Link to="/about" className="btn-outline">
                   Learn Our Story
@@ -168,7 +168,7 @@ export default function Home() {
                 {
                   icon: <BookOpen className="w-6 h-6 text-brand-primary" />,
                   title: "Pioneering Curriculum",
-                  desc: "Creating a responsive, just-in-time Executive Education framework that directly addresses technological acceleration and workforce shifts."
+                  desc: "Creating a responsive, just-in-time Leadership Programs framework that directly addresses technological acceleration and workforce shifts."
                 },
                 {
                   icon: <TrendingUp className="w-6 h-6 text-brand-primary" />,
