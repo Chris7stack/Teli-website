@@ -102,7 +102,7 @@ export default function Contact() {
                     <h4 className="font-bold text-sm text-slate-800 mb-1">Our Location</h4>
                     <p className="text-slate-500 text-xs leading-relaxed">
                       TELI Global Headquarters<br />
-                      Hayward, California 94542
+                      9544 Cresta Drive Los Angeles, CA 90035
                     </p>
                   </div>
                 </div>
@@ -135,17 +135,6 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-
-            <div className="bg-brand-accent/10 p-8 rounded-3xl border border-brand-accent/20 space-y-2">
-              <h4 className="font-bold text-xs uppercase tracking-wider text-brand-primary flex items-center gap-1.5">
-                <Clock size={16} /> Database Driven
-              </h4>
-              <p className="text-xs text-slate-700 leading-relaxed">
-                Inquiries are saved into our database immediately and processed securely. You do not need to configure complex mail setups.
-              </p>
-            </div>
-          </div>
-
           {/* Form Column (2/3 Width) */}
           <div className="lg:col-span-2">
             <AnimatePresence mode="wait">
