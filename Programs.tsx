@@ -142,7 +142,7 @@ export default function Programs() {
           <h2 className="text-4xl text-white mb-6 font-sans tracking-tight">Need a Custom Solution?</h2>
           <p className="text-slate-300 mb-10 text-lg leading-relaxed">
             We partner with community colleges, school districts, and universities to design bespoke 
-            Institutional Leadership & Strategic Leadership portfolios tailored to their specific goals and challenges.
+            Institutional Leadership & Strategic Leadership programs tailored to their specific goals and challenges.
           </p>
           <div className="flex justify-center">
             <Link to="/contact?program=custom" className="px-8 py-4 bg-brand-accent text-brand-primary rounded-xl font-bold hover:bg-white transition-colors shadow-lg">
