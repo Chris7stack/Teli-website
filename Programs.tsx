@@ -135,61 +135,6 @@ export default function Programs() {
         </motion.div>
       </section>
 
-      {/* Portfolio 2: Executive Coaching */}
-      <section className="max-w-7xl mx-auto px-6 border-t border-slate-100 pt-24 mb-16">
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="flex flex-col lg:flex-row-reverse gap-12 items-center"
-        >
-          <div className="flex-1">
-            <h2 className="text-3xl mb-4 text-slate-900 font-sans tracking-tight">Executive Coaching</h2>
-            <p className="text-brand-primary font-bold mb-6 italic">
-              Empowering mid-level rising stars and seasoned executives to navigate, adapt, and lead through institutional change.
-            </p>
-            <p className="text-slate-600 mb-8 leading-relaxed">
-              Our confidential Executive Coaching service is custom-structured to address the unique challenges of the community college ecosystem, accelerating strategic readiness for mid-level rising stars and serving as an invaluable sounding board for established executives. Together, we ensure your leadership teams possess the agility and strategic foresight required to succeed in a rapidly changing educational landscape.
-            </p>
-            
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-              {[
-                "Highly personalized, confidential 1:1 mentorship",
-                "Adaptive leadership strategies for digital & fiscal changes",
-                "Career pathing & cabinet readiness for mid-level leaders",
-                "Strategic crisis navigation & executive presence",
-                "Objective performance alignment & structural goal-setting",
-                "Innovative decision-making tools for shifting landscapes"
-              ].map((feature, fIdx) => (
-                <li key={fIdx} className="flex items-start gap-3 text-sm text-slate-700">
-                  <CheckCircle2 size={18} className="text-brand-accent shrink-0 mt-0.5" />
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-
-            <Link to="/contact?program=coaching" className="btn-primary inline-flex items-center gap-2">
-              Inquire About Coaching <ArrowRight size={18} />
-            </Link>
-          </div>
-
-          {/* Left Column (Minimalist Quote / Aesthetic White Space Block) */}
-          <div className="flex-1 w-full">
-            <div className="border border-slate-200/60 p-10 md:p-16 rounded-3xl relative overflow-hidden flex flex-col justify-center h-full bg-slate-50/50 min-h-[420px]">
-              <div className="max-w-md mx-auto text-center space-y-6">
-                <span className="text-[64px] font-serif text-brand-accent leading-none block select-none -mb-4">“</span>
-                <p className="text-xl md:text-2xl text-slate-700 font-sans tracking-tight leading-relaxed italic">
-                  “The best way to predict the future is to create it.”
-                </p>
-                <div className="pt-6 border-t border-slate-200 w-44 mx-auto">
-                  <p className="text-xs font-bold uppercase tracking-widest text-slate-900">— Peter F. Drucker</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </section>
-
       {/* Custom Solutions */}
       <section className="mt-32 bg-brand-primary py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-brand-primary to-slate-900 opacity-90" />
