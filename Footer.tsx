@@ -29,7 +29,6 @@ export default function Footer() {
           <h4 className="text-white font-bold mb-6">Leadership Programs</h4>
           <ul className="space-y-4 text-sm">
             <li><Link to="/programs" className="hover:text-brand-accent transition-colors">TELI Leadership Fellows</Link></li>
-            <li><Link to="/programs" className="hover:text-brand-accent transition-colors">Executive Coaching</Link></li>
           </ul>
         </div>
 
