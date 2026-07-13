@@ -46,7 +46,7 @@ export default function About() {
     { 
       name: "Dr. Karla Bailey", 
       role: "Secretary and Treasurer", 
-      bio: "Dr. Karla Bailey is founder and CEO of the International Institute of Technology, Education, and Leadership and a Fulbright Specialist with the U.S. Department of State. She is an internationally recognized scholar-practitioner specializing in the governance, policy, and strategic integration of emerging technologies in education, with expertise spanning artificial intelligence, digital transformation, and institutional innovation. Her work has supported educational institutions across the United States and internationally in strengthening leadership, governance, and responsible innovation.", 
+      bio: "Dr. Karla Bailey is founder and CEO of the International Institute of Technology, Education, and Leadership and a Fulbright Specialist with the U.S. Department of State. She is an internationally recognized scholar-practitioner specializing in the governance, policy, and strategic integration of emerging technologies in education, with expertise spanning artificial intelligence, digital transformation, and institutional innovation.", 
       img: "https://raw.githubusercontent.com/Chris7stack/Teli-website/813c0684fe46dfe15412d206d35d17d486ae5d8d/public/images/Karla-Bailey.jpg"
     },
     { 
