@@ -10,7 +10,7 @@ export default function Programs() {
         <div className="max-w-3xl">
           <h1 className="text-5xl mb-6 font-sans tracking-tight text-slate-900">Leadership Programs</h1>
           <p className="text-xl text-slate-600 leading-relaxed">
-            Our Leadership Programs portfolios are designed to meet community college leaders where they are in their career journey, 
+            Our Leadership Programs are designed to meet community college leaders where they are in their career journey, 
             delivering deep institutional impact, lifelong networks, and ethical, visionary leadership models.
           </p>
         </div>
