@@ -1,4 +1,4 @@
-import { getDb } from './api/db';
+import { getDb } from './db.js';
 
 export default async function handler(req: any, res: any) {
   // Only allow POST requests
