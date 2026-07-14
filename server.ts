@@ -3,7 +3,7 @@ import path from 'path';
 import fs from 'fs';
 import nodemailer from 'nodemailer';
 import { createServer as createViteServer } from 'vite';
-import { getDb } from './db';
+import { getDb } from './api/db';
 
 const app = express();
 const PORT = 3000;
