@@ -1,4 +1,4 @@
-import { getDb } from './db.js';
+import { getDb } from '../db.js';
 
 export default async function handler(req: any, res: any) {
   // Only allow GET requests
