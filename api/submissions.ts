@@ -1,4 +1,4 @@
-import { getDb } from '../db';
+import { getDb } from './api/db';
 
 export default async function handler(req: any, res: any) {
   // Only allow GET requests
