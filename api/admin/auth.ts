@@ -46,7 +46,7 @@ export function getSessionCookie(token: string): string {
     `${COOKIE_NAME}=${token}`,
     'HttpOnly',
     'Secure',
-    'SameSite=Strict',
+    'SameSite=Lax',
     'Path=/',
     `Max-Age=${SESSION_DURATION_SECONDS}`,
   ].join('; ');
@@ -57,7 +57,7 @@ export function getExpiredSessionCookie(): string {
     `${COOKIE_NAME}=`,
     'HttpOnly',
     'Secure',
-    'SameSite=Strict',
+   'SameSite=Lax',
     'Path=/',
     'Max-Age=0',
   ].join('; ');
