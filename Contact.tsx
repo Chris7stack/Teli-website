@@ -90,7 +90,7 @@ export default function Contact() {
           
           {/* Side Panel: Information Column (1/3 Width) */}
           <div className="lg:col-span-1 space-y-6">
-            <div className="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-xs space-y-8">
+            <div className="bg-white p-10 md:p-16 rounded-3xl border border-slate-200 shadow-lg text-center space-y-8"
               <h3 className="text-xl font-serif font-bold text-slate-900 border-b border-slate-100 pb-4">Office Information</h3>
               
               <div className="space-y-6">
@@ -153,26 +153,25 @@ export default function Contact() {
                   <div className="mx-auto w-16 h-16 bg-emerald-50 text-emerald-500 rounded-2xl flex items-center justify-center">
                     <CheckCircle size={32} />
                   </div>
-                  <div className="space-y-3">
-                    <h2 className="text-2xl font-serif font-bold text-slate-900">Inquiry Received</h2>
-                    <p className="text-slate-500 text-sm max-w-md mx-auto">
-                      Thank you for contacting TELI. Your inquiry has been received successfully. A member of our team will review your message and respond as appropriate.
-                    </p>
-                  </div>
-                  <div className="pt-4 border-t border-slate-100 flex justify-center gap-4">
-                    <button 
-                      onClick={() => setSubmitSuccess(false)}
-                      className="px-5 py-2.5 rounded-xl text-xs font-bold text-brand-primary bg-brand-primary/5 hover:bg-brand-primary/10 transition-colors"
-                    >
-                      Send Another Inquiry
-                    </button>
-                    <Link 
-                      to="/admin-portal" 
-                      className="px-5 py-2.5 rounded-xl text-xs font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors border border-slate-200"
-                    >
-                      View Administrative Logs
-                    </Link>
-                  </div>
+                  <div className="space-y-4">
+  <h2 className="text-3xl font-serif font-bold text-slate-900">
+    Thank You for Contacting TELI
+  </h2>
+
+  <p className="text-slate-600 text-base leading-relaxed max-w-lg mx-auto">
+    Your inquiry has been received successfully.
+  </p>
+
+  <p className="text-slate-500 text-sm leading-relaxed max-w-lg mx-auto">
+    A member of the TELI team will review your message and respond as
+    appropriate.
+  </p>
+
+  <p className="text-slate-500 text-sm leading-relaxed max-w-lg mx-auto">
+    We appreciate your interest in TELI and look forward to connecting
+    with you.
+  </p>
+</div>
                 </motion.div>
               ) : (
                 <motion.div 
