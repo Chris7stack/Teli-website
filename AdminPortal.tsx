@@ -52,10 +52,11 @@ export default function AdminPortal() {
   const [selectedContact, setSelectedContact] = useState<ContactSubmission | null>(null);
 
   // Auto-login if password is saved in sessionStorage
-  useEffect(() => {
+ useEffect(() => {
   restoreSession();
 }, []);
-    const restoreSession = async () => {
+
+const restoreSession = async () => {
   setIsLoading(true);
   setErrorMsg('');
 
@@ -86,13 +87,13 @@ export default function AdminPortal() {
     setErrorMsg(err.message || 'Unable to restore session.');
   } finally {
     setIsLoading(false);
-    }
-  }, []);
-  
-  const handleLoginSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    verifyPassword(password);
-  };
+  }
+};
+
+const handleLoginSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
+  verifyPassword(password);
+};
 
   const verifyPassword = async (pwdToVerify: string) => {
   setIsLoading(true);
