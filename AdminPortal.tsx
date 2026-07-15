@@ -53,9 +53,41 @@ export default function AdminPortal() {
 
   // Auto-login if password is saved in sessionStorage
   useEffect(() => {
-    const savedPassword = sessionStorage.getItem('teli_admin_password');
-    if (savedPassword) {
-      verifyPassword(savedPassword);
+  restoreSession();
+}, []);
+    const restoreSession = async () => {
+  setIsLoading(true);
+  setErrorMsg('');
+
+  try {
+    const response = await fetch('/api/admin/submissions', {
+      method: 'GET',
+      credentials: 'same-origin',
+    });
+
+    if (response.status === 401) {
+      setIsAuthenticated(false);
+      return;
+    }
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(
+        data.error || 'Unable to restore the administrative session.'
+      );
+    }
+
+    setApplications(data.applications || []);
+    setContacts(data.contacts || []);
+    setIsAuthenticated(true);
+  } catch (err: any) {
+    setIsAuthenticated(false);
+    setErrorMsg(err.message || 'Unable to restore session.');
+  } finally {
+    setIsLoading(false);
+  }
+};
     }
   }, []);
 
@@ -65,42 +97,82 @@ export default function AdminPortal() {
   };
 
   const verifyPassword = async (pwdToVerify: string) => {
-    setIsLoading(true);
-    setErrorMsg('');
-    try {
-      const response = await fetch(`/api/admin/submissions?token=${encodeURIComponent(pwdToVerify)}`);
-      const data = await response.json();
+  setIsLoading(true);
+  setErrorMsg('');
 
-      if (!response.ok) {
-        throw new Error(data.error || 'Authentication failed.');
+  try {
+    const loginResponse = await fetch('/api/admin/login', {
+      method: 'POST',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        password: pwdToVerify,
+      }),
+    });
+
+    const loginData = await loginResponse.json();
+
+    if (!loginResponse.ok) {
+      throw new Error(
+        loginData.error || 'Authentication failed.'
+      );
+    }
+
+    const submissionsResponse = await fetch(
+      '/api/admin/submissions',
+      {
+        method: 'GET',
+        credentials: 'same-origin',
       }
+    );
 
-      setApplications(data.applications || []);
-      setContacts(data.contacts || []);
-      setIsAuthenticated(true);
-      sessionStorage.setItem('teli_admin_password', pwdToVerify);
-    } catch (err: any) {
-      setErrorMsg(err.message || 'Access Denied. Invalid administrative password.');
-      sessionStorage.removeItem('teli_admin_password');
-    } finally {
-      setIsLoading(false);
+    const submissionsData =
+      await submissionsResponse.json();
+
+    if (!submissionsResponse.ok) {
+      throw new Error(
+        submissionsData.error ||
+          'Unable to load administrative submissions.'
+      );
+    }
+
+    setApplications(submissionsData.applications || []);
+    setContacts(submissionsData.contacts || []);
+    setIsAuthenticated(true);
+    setPassword('');
+  } catch (err: any) {
+    setIsAuthenticated(false);
+    setErrorMsg(
+      err.message ||
+        'Access denied. Invalid administrative password.'
+    );
+  } finally {
+    setIsLoading(false);
+  }
+};
+
+  const handleRefresh = async () => {
+  await restoreSession();
+};
     }
   };
 
-  const handleRefresh = () => {
-    const pwd = sessionStorage.getItem('teli_admin_password') || password;
-    if (pwd) {
-      verifyPassword(pwd);
-    }
-  };
-
-  const handleLogout = () => {
-    sessionStorage.removeItem('teli_admin_password');
+  const handleLogout = async () => {
+  try {
+    await fetch('/api/admin/logout', {
+      method: 'POST',
+      credentials: 'same-origin',
+    });
+  } finally {
     setIsAuthenticated(false);
     setPassword('');
     setApplications([]);
     setContacts([]);
-  };
+    setErrorMsg('');
+  }
+};
 
   // Resume Download Helper
   const downloadResume = (app: ApplicationSubmission) => {
