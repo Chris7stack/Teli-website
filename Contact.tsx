@@ -156,7 +156,7 @@ export default function Contact() {
                   <div className="space-y-3">
                     <h2 className="text-2xl font-serif font-bold text-slate-900">Inquiry Received</h2>
                     <p className="text-slate-500 text-sm max-w-md mx-auto">
-                      Thank you for contacting TELI. Your inquiry was saved to our administrative system, and our advisory committee will reply via email soon.
+                      Thank you for contacting TELI. Your inquiry has been received successfully. A member of our team will review your message and respond as appropriate.
                     </p>
                   </div>
                   <div className="pt-4 border-t border-slate-100 flex justify-center gap-4">
