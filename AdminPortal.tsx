@@ -155,8 +155,6 @@ const handleLoginSubmit = (e: React.FormEvent) => {
   const handleRefresh = async () => {
   await restoreSession();
 };
-    }
-  };
 
   const handleLogout = async () => {
   try {
