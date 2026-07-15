@@ -95,40 +95,62 @@ const handleLoginSubmit = (e: React.FormEvent) => {
   verifyPassword(password);
 };
 
-  const verifyPassword = async (pwdToVerify: string) => {
+ const verifyPassword = async (pwdToVerify: string) => {
   setIsLoading(true);
   setErrorMsg('');
 
   try {
     const loginResponse = await fetch('/api/admin/login', {
       method: 'POST',
-      credentials: 'same-origin',
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
+        Accept: 'application/json',
       },
       body: JSON.stringify({
         password: pwdToVerify,
       }),
     });
 
-    const loginData = await loginResponse.json();
-
     if (!loginResponse.ok) {
-      throw new Error(
-        loginData.error || 'Authentication failed.'
-      );
+      const loginText = await loginResponse.text();
+
+      let message = 'Authentication failed.';
+
+      try {
+        const loginData = JSON.parse(loginText);
+        message = loginData.error || message;
+      } catch {
+        console.error('Unexpected login response:', loginText);
+      }
+
+      throw new Error(message);
     }
 
-    const submissionsResponse = await fetch(
-      '/api/admin/submissions',
-      {
-        method: 'GET',
-        credentials: 'same-origin',
-      }
-    );
+    const submissionsResponse = await fetch('/api/admin/submissions', {
+      method: 'GET',
+      credentials: 'include',
+      headers: {
+        Accept: 'application/json',
+      },
+    });
 
-    const submissionsData =
-      await submissionsResponse.json();
+    const submissionsText = await submissionsResponse.text();
+
+    let submissionsData: any;
+
+    try {
+      submissionsData = JSON.parse(submissionsText);
+    } catch {
+      console.error(
+        'Unexpected submissions response:',
+        submissionsText
+      );
+
+      throw new Error(
+        `The administrative submissions service returned an invalid response. Status ${submissionsResponse.status}.`
+      );
+    }
 
     if (!submissionsResponse.ok) {
       throw new Error(
@@ -141,11 +163,13 @@ const handleLoginSubmit = (e: React.FormEvent) => {
     setContacts(submissionsData.contacts || []);
     setIsAuthenticated(true);
     setPassword('');
-  } catch (err: any) {
+  } catch (error: any) {
+    console.error('Administrative sign-in error:', error);
+
     setIsAuthenticated(false);
     setErrorMsg(
-      err.message ||
-        'Access denied. Invalid administrative password.'
+      error?.message ||
+        'Unable to complete administrative sign-in.'
     );
   } finally {
     setIsLoading(false);
@@ -160,7 +184,7 @@ const handleLoginSubmit = (e: React.FormEvent) => {
   try {
     await fetch('/api/admin/logout', {
       method: 'POST',
-      credentials: 'same-origin',
+      credentials: 'include',
     });
   } finally {
     setIsAuthenticated(false);
