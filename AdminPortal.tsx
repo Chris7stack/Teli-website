@@ -86,11 +86,9 @@ export default function AdminPortal() {
     setErrorMsg(err.message || 'Unable to restore session.');
   } finally {
     setIsLoading(false);
-  }
-};
     }
   }, []);
-
+  
   const handleLoginSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     verifyPassword(password);
