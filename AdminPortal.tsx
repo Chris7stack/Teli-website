@@ -63,7 +63,7 @@ const restoreSession = async () => {
   try {
     const response = await fetch('/api/admin/submissions', {
       method: 'GET',
-      credentials: 'same-origin',
+      credentials: 'include',
     });
 
     if (response.status === 401) {
@@ -95,7 +95,7 @@ const handleLoginSubmit = (e: React.FormEvent) => {
   verifyPassword(password);
 };
 
- const verifyPassword = async (pwdToVerify: string) => {
+const verifyPassword = async (pwdToVerify: string) => {
   setIsLoading(true);
   setErrorMsg('');
 
@@ -105,7 +105,6 @@ const handleLoginSubmit = (e: React.FormEvent) => {
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
-        Accept: 'application/json',
       },
       body: JSON.stringify({
         password: pwdToVerify,
@@ -113,34 +112,33 @@ const handleLoginSubmit = (e: React.FormEvent) => {
     });
 
     if (!loginResponse.ok) {
-      const loginText = await loginResponse.text();
-
       let message = 'Authentication failed.';
 
       try {
-        const loginData = JSON.parse(loginText);
-        message = loginData.error || message;
+        const errorData = await loginResponse.json();
+        message = errorData.error || message;
       } catch {
-        console.error('Unexpected login response:', loginText);
+        // Keep the default message.
       }
 
       throw new Error(message);
     }
 
+    // Do not parse the successful login response.
+    // The important result is the secure session cookie.
     const submissionsResponse = await fetch('/api/admin/submissions', {
       method: 'GET',
       credentials: 'include',
-      headers: {
-        Accept: 'application/json',
-      },
     });
 
     const submissionsText = await submissionsResponse.text();
 
-    let submissionsData: any;
+    let submissionsData: any = {};
 
     try {
-      submissionsData = JSON.parse(submissionsText);
+      submissionsData = submissionsText
+        ? JSON.parse(submissionsText)
+        : {};
     } catch {
       console.error(
         'Unexpected submissions response:',
@@ -148,7 +146,7 @@ const handleLoginSubmit = (e: React.FormEvent) => {
       );
 
       throw new Error(
-        `The administrative submissions service returned an invalid response. Status ${submissionsResponse.status}.`
+        `The submissions service returned an invalid response. Status ${submissionsResponse.status}.`
       );
     }
 
