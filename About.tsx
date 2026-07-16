@@ -66,7 +66,7 @@ export default function About() {
     { 
       name: "Mr. J. Noah Brown", 
       bio: "Mr. J. Noah Brown is president and CEO emeritus of the Association of Community College Trustees (ACCT). He is an acclaimed author, policy strategist, and prominent national voice whose visionary work has modernized trustee governance and driven community college institutional growth.", 
-      img: "https://raw.githubusercontent.com/Chris7stack/Teli-website/813c0684fe46dfe15412d206d35d17d486ae5d8d/public/images/TELI%20Logo%20white%20background%20Logo%20on%20left.png"
+      img: "hhttps://github.com/Chris7stack/Teli-website/blob/c87b55d059f21b30016c3b77dbda595f49a28aa5/public/images/J%20Noah-Brown.PNG"
     },
     { 
       name: "Mr. Augustine (Augie) Gallego", 
@@ -75,7 +75,7 @@ export default function About() {
     },
     { 
       name: "Dr. Jing Luan", 
-      bio: "Dr. Jing Luan is president emeritus of the American International Recruitment Council and provost emeritus at San Mateo County Community College District. As a globally recognized expert, his groundbreaking work in predictive data analytics and international enrollment frameworks has established new benchmarks for institutional planning.", 
+      bio: "Dr. Jing Luán is the system provost emeritus of San Mateo County Community College District and a school board member. A globally recognized expert, his pioneering work in predictive data analytics and international enrollment strategy has set new standards across the field", 
       img: "https://raw.githubusercontent.com/Chris7stack/Teli-website/813c0684fe46dfe15412d206d35d17d486ae5d8d/public/images/Jing-luan.jpg"
     },
     { 
