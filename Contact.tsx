@@ -90,7 +90,8 @@ export default function Contact() {
           
           {/* Side Panel: Information Column (1/3 Width) */}
           <div className="lg:col-span-1 space-y-6">
-            <div className="bg-white p-10 md:p-16 rounded-3xl border border-slate-200 shadow-lg text-center space-y-8"
+            <div className="bg-white p-10 md:p-16 rounded-3xl border border-slate-200 shadow-lg text-center space-y-8">
+            </div>
               <h3 className="text-xl font-serif font-bold text-slate-900 border-b border-slate-100 pb-4">Office Information</h3>
               
               <div className="space-y-6">
