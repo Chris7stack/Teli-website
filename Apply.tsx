@@ -373,10 +373,10 @@ export default function Apply() {
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/10 outline-none text-xs transition-all bg-slate-50 font-medium"
                     >
-                      <option value="1-3">1 to 3 Years (Emerging Leader)</option>
-                      <option value="4-7">4 to 7 Years (Mid-level Administrator)</option>
-                      <option value="8-12">8 to 12 Years (Senior Director / Dean)</option>
-                      <option value="13+">13+ Years (Executive / Vice President)</option>
+                      <option value="1-3">1 to 3 Years </option>
+                      <option value="4-7">4 to 7 Years </option>
+                      <option value="8-12">8 to 12 Years </option>
+                      <option value="13+">13+ Years </option>
                     </select>
                   </div>
                 </motion.div>
