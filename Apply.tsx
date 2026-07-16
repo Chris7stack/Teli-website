@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { 
-  ClipboardList, User, Building, Landmark, GraduationCap, 
-  BookOpen, Compass, FileText, Upload, CheckCircle, 
-  ArrowRight, ArrowLeft, Loader2, AlertCircle, Info, ShieldCheck
+ import {
+  ClipboardList,
+  User,
+  Building,
+  BookOpen,
+  Compass,
 } from 'lucide-react';
 
 interface FormData {
@@ -235,7 +238,7 @@ export default function Apply() {
       </p>
 
       <p className="text-slate-500 text-sm max-w-lg mx-auto">
-        We have received your application. Please save your reference number for your records.
+        Thank you for submitting your application. Please save your application reference number for your records.
       </p>
     </div>
 
@@ -522,7 +525,7 @@ export default function Apply() {
                     </div>
                   </div>
 
-                  <div className="bg-slate-50 p-4 rounded-xl border border-slate-150 space-y-2 text-xs leading-normal">
+                  <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2 text-xs leading-normal">
                     <div className="flex gap-2 items-center text-slate-700 font-bold">
                       <ShieldCheck size={16} className="text-brand-primary" />
                       <span>Privacy Notice</span>
@@ -530,8 +533,7 @@ export default function Apply() {
                     <p className="text-sm text-slate-600 leading-relaxed">
   The information you provide in this application will be used solely for the
   evaluation and administration of the TELI Leadership Fellows Program. Your
-  application materials will be handled in accordance with TELI's Privacy
-  Policy and will not be shared outside the selection process without your
+  application materials will not be shared outside the selection process without your
   permission unless required by law.
 </p>
                   </div>
@@ -549,18 +551,18 @@ export default function Apply() {
 
             {/* Bottom Form Actions */}
             <div className="bg-slate-50 border-t border-slate-100 py-4 px-6 md:px-10 flex justify-between items-center">
-              {step > 1 ? (
-                <button 
-                  type="button"
-                  onClick={handlePrevStep}
-                  disabled={isSubmitting}
-                  className="px-5 py-2.5 rounded-xl text-xs font-bold text-slate-500 hover:text-slate-900 hover:bg-slate-100 border border-slate-200 transition-all flex items-center gap-1.5 disabled:opacity-40"
-                >
-                  <ArrowLeft size={14} /> Back
-                </button>
-              ) : (
-                <div /> // placeholder for alignment
-              )}
+             {step > 1 ? (
+  <button
+    type="button"
+    onClick={handlePrevStep}
+    disabled={isSubmitting}
+    className="px-5 py-2.5 rounded-xl text-xs font-bold text-slate-500 hover:text-slate-900 hover:bg-slate-100 border border-slate-200 transition-all flex items-center gap-1.5 disabled:opacity-40"
+  >
+    <ArrowLeft size={14} /> Back
+  </button>
+) : (
+  <div aria-hidden="true" />
+)}
 
               {step < 3 ? (
                 <button 
