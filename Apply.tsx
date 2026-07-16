@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { 
- import {
-  ClipboardList, User, Building, BookOpen, Compass,
-} from 'lucide-react';
+  ClipboardList, User, Building, BookOpen,
+  Compass, FileText, Upload, CheckCircle,
+  ArrowRight, ArrowLeft, Loader2, AlertCircle,
+  Info, ShieldCheck,
+} from 'lucide-react';,
 
 interface FormData {
   firstName: string;
