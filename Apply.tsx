@@ -260,7 +260,6 @@ export default function Apply() {
     </div>
   </motion.div>
 ) : (
-        ) : (
           /* APPLICATION FORM CARDS */
           <form onSubmit={handleSubmit} className="bg-white rounded-3xl border border-slate-200/80 shadow-sm overflow-hidden">
             
