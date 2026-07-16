@@ -6,7 +6,7 @@ import {
   Compass, FileText, Upload, CheckCircle,
   ArrowRight, ArrowLeft, Loader2, AlertCircle,
   Info, ShieldCheck,
-} from 'lucide-react';,
+} from 'lucide-react';
 
 interface FormData {
   firstName: string;
