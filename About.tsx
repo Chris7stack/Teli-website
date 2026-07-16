@@ -75,7 +75,7 @@ export default function About() {
     },
     { 
       name: "Dr. Jing Luan", 
-      bio: "Dr. Jing Luán is the system provost emeritus of San Mateo County Community College District and a school board member. A globally recognized expert, his pioneering work in predictive data analytics and international enrollment strategy has set new standards across the field", 
+      bio: "Dr. Jing Luan is the system provost emeritus of San Mateo County Community College District and a school board member. A globally recognized expert, his pioneering work in AI and data mining has set new standards across the field.", 
       img: "https://raw.githubusercontent.com/Chris7stack/Teli-website/813c0684fe46dfe15412d206d35d17d486ae5d8d/public/images/Jing-luan.jpg"
     },
     { 
