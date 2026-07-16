@@ -3,11 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { 
  import {
-  ClipboardList,
-  User,
-  Building,
-  BookOpen,
-  Compass,
+  ClipboardList, User, Building, BookOpen, Compass,
 } from 'lucide-react';
 
 interface FormData {
