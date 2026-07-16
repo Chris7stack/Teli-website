@@ -214,42 +214,51 @@ export default function Apply() {
         )}
 
         {/* Success Card */}
-        {submitSuccess ? (
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="bg-white p-8 md:p-12 rounded-3xl border border-slate-200/80 shadow-md text-center space-y-6"
-          >
-            <div className="mx-auto w-16 h-16 bg-emerald-50 text-emerald-500 rounded-2xl flex items-center justify-center shadow-xs">
-              <CheckCircle size={36} />
-            </div>
-            
-            <div className="space-y-3">
-              <h2 className="text-3xl font-serif font-bold text-slate-900">Application Submitted Successfully!</h2>
-              <p className="text-slate-500 text-sm max-w-md mx-auto">
-                Thank you for applying to the TELI Leadership Fellows Program. Your candidate profiles and resume have been securely locked into our roster database.
-              </p>
-            </div>
+       {submitSuccess ? (
+  <motion.div
+    initial={{ opacity: 0, y: 15, scale: 0.98 }}
+    animate={{ opacity: 1, y: 0, scale: 1 }}
+    transition={{ duration: 0.35 }}
+    className="bg-white p-8 md:p-12 rounded-3xl border border-slate-200 shadow-md text-center space-y-8"
+  >
+    <div className="mx-auto w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center">
+      <CheckCircle className="text-emerald-500" size={36} />
+    </div>
 
-            <div className="max-w-sm mx-auto bg-slate-50 p-6 rounded-2xl border border-slate-150 space-y-4">
-              <div className="space-y-1">
-                <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Application Reference ID</span>
-                <span className="block font-mono text-lg font-bold text-brand-primary">{appRefId}</span>
-              </div>
-              <p className="text-[11px] text-slate-500 leading-normal">
-                Please save this reference number for correspondence. Our Selection and Governance board will review applications and follow up by November 2026.
-              </p>
-            </div>
+    <div className="space-y-4">
+      <h2 className="text-3xl font-serif font-bold text-slate-900">
+        Application Submitted Successfully
+      </h2>
 
-            <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row justify-center gap-4">
-              <Link to="/" className="text-xs font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 px-6 py-3 rounded-xl transition-all">
-                Return to Home
-              </Link>
-              <Link to="/admin-portal" className="text-xs font-bold text-brand-primary bg-brand-primary/5 hover:bg-brand-primary/10 border border-brand-primary/10 px-6 py-3 rounded-xl transition-all">
-                Access Admin Dashboard
-              </Link>
-            </div>
-          </motion.div>
+      <p className="text-slate-600 text-base max-w-xl mx-auto">
+        Thank you for your interest in the TELI Leadership Fellows Program.
+      </p>
+
+      <p className="text-slate-500 text-sm max-w-lg mx-auto">
+        We have received your application. Please save your reference number for your records.
+      </p>
+    </div>
+
+    <div className="max-w-sm mx-auto bg-slate-50 border border-slate-200 rounded-2xl p-6">
+      <div className="text-[10px] uppercase tracking-wider font-bold text-slate-400">
+        Application Reference ID
+      </div>
+
+      <div className="mt-2 text-xl font-mono font-bold text-brand-primary">
+        {appRefId}
+      </div>
+    </div>
+
+    <div className="pt-6 border-t border-slate-100 flex justify-center">
+      <Link
+        to="/"
+        className="inline-flex items-center justify-center px-8 py-3 rounded-xl bg-brand-primary text-white font-semibold hover:opacity-90 transition"
+      >
+        Return to Home
+      </Link>
+    </div>
+  </motion.div>
+) : (
         ) : (
           /* APPLICATION FORM CARDS */
           <form onSubmit={handleSubmit} className="bg-white rounded-3xl border border-slate-200/80 shadow-sm overflow-hidden">
@@ -516,12 +525,15 @@ export default function Apply() {
                   <div className="bg-slate-50 p-4 rounded-xl border border-slate-150 space-y-2 text-xs leading-normal">
                     <div className="flex gap-2 items-center text-slate-700 font-bold">
                       <ShieldCheck size={16} className="text-brand-primary" />
-                      <span>Administrative Submission Policy</span>
+                      <span>Privacy Notice</span>
                     </div>
-                    <p className="text-slate-500 text-[11px] leading-relaxed">
-                      Your application will be locked directly into our local administration database. 
-                      No public exposure occurs. You can review or request deletion of your records anytime.
-                    </p>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+  The information you provide in this application will be used solely for the
+  evaluation and administration of the TELI Leadership Fellows Program. Your
+  application materials will be handled in accordance with TELI's Privacy
+  Policy and will not be shared outside the selection process without your
+  permission unless required by law.
+</p>
                   </div>
                 </motion.div>
               )}
