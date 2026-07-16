@@ -66,7 +66,7 @@ export default function About() {
     { 
       name: "Mr. J. Noah Brown", 
       bio: "Mr. J. Noah Brown is president and CEO emeritus of the Association of Community College Trustees (ACCT). He is an acclaimed author, policy strategist, and prominent national voice whose visionary work has modernized trustee governance and driven community college institutional growth.", 
-      img: "hhttps://github.com/Chris7stack/Teli-website/blob/c87b55d059f21b30016c3b77dbda595f49a28aa5/public/images/J%20Noah-Brown.PNG"
+      img: "https://raw.githubusercontent.com/Chris7stack/Teli-website/813c0684fe46dfe15412d206d35d17d486ae5d8d/public/images/JNoah-Brown.PNG"
     },
     { 
       name: "Mr. Augustine (Augie) Gallego", 
