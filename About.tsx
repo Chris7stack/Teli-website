@@ -41,7 +41,7 @@ export default function About() {
       name: "Dr. Dale F. Campbell", 
       role: "Vice President for Strategic Partnership Development and Planning", 
       bio: "Dr. Dale F. Campbell is professor emeritus of higher education administration at the University of Florida and founder of the Bellwether College Consortium. He is an esteemed scholar-practitioner whose pioneering research in national community college policy and institutional futures continues to guide educational leaders across the country.", 
-      img: "images/Dale-Campbell.jpg"
+      img: "images/Dale-Campbell2.jpg"
     },
     { 
       name: "Dr. Karla Bailey", 
