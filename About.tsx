@@ -41,7 +41,7 @@ export default function About() {
       name: "Dr. Dale F. Campbell", 
       role: "Vice President for Strategic Partnership Development and Planning", 
       bio: "Dr. Dale F. Campbell is professor emeritus of higher education administration at the University of Florida and founder of the Bellwether College Consortium. He is an esteemed scholar-practitioner whose pioneering research in national community college policy and institutional futures continues to guide educational leaders across the country.", 
-      img: "https://raw.githubusercontent.com/Chris7stack/Teli-website/813c0684fe46dfe15412d206d35d17d486ae5d8d/public/images/Dale-Campbell.jpg"
+      img: "https://raw.githubusercontent.com/Chris7stack/Teli-website/813c0684fe46dfe15412d206d35d17d486ae5d8d/public/images/Dale-Campbell2.jpg"
     },
     { 
       name: "Dr. Karla Bailey", 
@@ -66,7 +66,7 @@ export default function About() {
     { 
       name: "Mr. J. Noah Brown", 
       bio: "Mr. J. Noah Brown is president and CEO emeritus of the Association of Community College Trustees (ACCT). He is an acclaimed author, policy strategist, and prominent national voice whose visionary work has modernized trustee governance and driven community college institutional growth.", 
-      img: "/images/J-Noah-Brown.jpg"
+      img: "/images/JNoah-Brown.jpg"
     },
     { 
       name: "Mr. Augustine (Augie) Gallego", 
